@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import numpy
 
 
-#%%
 def main():
     df = pandas.read_csv(
         "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data",
@@ -28,7 +27,6 @@ def main():
     plt.show()
 
 
-#%%
 if __name__ == "__main__":
     sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
     from utils.perceptron import Perceptron
