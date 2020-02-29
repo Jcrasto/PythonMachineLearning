@@ -2,6 +2,8 @@ import pandas
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 import numpy as np
+from sklearn.metrics import accuracy_score
+from sklearn.tree import export_graphviz
 
 
 def one_hot_encode(df, encode_cols):
@@ -21,12 +23,8 @@ def create_decision_tree_model(df, numeric_cols):
     model.fit(train_X, train_y)
 
     predictions = model.predict(val_X)
-    eval = pandas.DataFrame()
-    eval["actual"] = val_y
-    eval["predicted"] = predictions
-    eval["check"] = eval["actual"] == eval["predicted"]
-    # return(model)
-    return eval
+    print(str(accuracy_score(predictions,val_y)) + "% predicted correctly")
+    return(model)
 
 
 def final_model_test(model, col_names, numeric_cols, encode_cols):
@@ -85,5 +83,5 @@ if __name__ == "__main__":
     ]
     df = one_hot_encode(df, encode_cols)
     numeric_cols = df.describe().columns.values
-    eval = create_decision_tree_model(df, numeric_cols)
-    print(str(eval["check"].sum() / eval.shape[0]) + "% predicted correctly")
+    model = create_decision_tree_model(df, numeric_cols)
+    # export_graphviz(model,feature_names=numeric_cols)
