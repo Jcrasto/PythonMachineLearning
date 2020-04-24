@@ -1,0 +1,31 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 0 issues that require attention
+--------------------------------------------------------------------------------
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file './iristf1.py'
+ outputting to './tf2iris.py'
+--------------------------------------------------------------------------------
+
+26:4: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+27:4: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+30:20: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+31:20: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+32:21: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+35:20: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+36:20: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+37:21: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+53:11: INFO: Added keywords to args of function 'tf.argmax'
+56:7: INFO: Added keywords to args of function 'tf.reduce_mean'
+56:22: INFO: Changing labels arg of tf.nn.softmax_cross_entropy_with_logits to tf.stop_gradient(labels). Please check this transformation.
+
+57:12: INFO: Renamed 'tf.train.GradientDescentOptimizer' to 'tf.compat.v1.train.GradientDescentOptimizer'
+62:7: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+65:5: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+--------------------------------------------------------------------------------
+
